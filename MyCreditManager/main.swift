@@ -7,5 +7,5 @@
 
 import Foundation
 
-print("Hello, World!")
-
+let menu = Menu()
+menu.showMenuList()

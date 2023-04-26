@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		A5B7BB7F29F8CDE900F50814 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B7BB7E29F8CDE900F50814 /* main.swift */; };
+		A5B7BB8829F8D8E400F50814 /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B7BB8729F8D8E400F50814 /* Menu.swift */; };
+		A5B7BB8C29F8E67A00F50814 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B7BB8B29F8E67A00F50814 /* Enums.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +27,8 @@
 /* Begin PBXFileReference section */
 		A5B7BB7B29F8CDE900F50814 /* MyCreditManager */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = MyCreditManager; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5B7BB7E29F8CDE900F50814 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		A5B7BB8729F8D8E400F50814 /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
+		A5B7BB8B29F8E67A00F50814 /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,9 +61,19 @@
 		A5B7BB7D29F8CDE900F50814 /* MyCreditManager */ = {
 			isa = PBXGroup;
 			children = (
+				A5B7BB8D29F8EB3D00F50814 /* Enums */,
+				A5B7BB8729F8D8E400F50814 /* Menu.swift */,
 				A5B7BB7E29F8CDE900F50814 /* main.swift */,
 			);
 			path = MyCreditManager;
+			sourceTree = "<group>";
+		};
+		A5B7BB8D29F8EB3D00F50814 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				A5B7BB8B29F8E67A00F50814 /* Enums.swift */,
+			);
+			path = Enums;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -120,6 +134,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5B7BB8829F8D8E400F50814 /* Menu.swift in Sources */,
+				A5B7BB8C29F8E67A00F50814 /* Enums.swift in Sources */,
 				A5B7BB7F29F8CDE900F50814 /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -243,6 +259,7 @@
 		A5B7BB8329F8CDE900F50814 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = U27URF7CD4;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -254,6 +271,7 @@
 		A5B7BB8429F8CDE900F50814 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = U27URF7CD4;
 				ENABLE_HARDENED_RUNTIME = YES;
