@@ -10,6 +10,7 @@
 		A5B7BB7F29F8CDE900F50814 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B7BB7E29F8CDE900F50814 /* main.swift */; };
 		A5B7BB8829F8D8E400F50814 /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B7BB8729F8D8E400F50814 /* Menu.swift */; };
 		A5B7BB8C29F8E67A00F50814 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B7BB8B29F8E67A00F50814 /* Enums.swift */; };
+		A5B7BB9029F8EF0900F50814 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B7BB8F29F8EF0900F50814 /* Data.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -29,6 +30,7 @@
 		A5B7BB7E29F8CDE900F50814 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		A5B7BB8729F8D8E400F50814 /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
 		A5B7BB8B29F8E67A00F50814 /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
+		A5B7BB8F29F8EF0900F50814 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,7 +64,8 @@
 			isa = PBXGroup;
 			children = (
 				A5B7BB8D29F8EB3D00F50814 /* Enums */,
-				A5B7BB8729F8D8E400F50814 /* Menu.swift */,
+				A5B7BB8E29F8EEFB00F50814 /* Model */,
+				A5B7BB9329F8FFAC00F50814 /* ViewModel */,
 				A5B7BB7E29F8CDE900F50814 /* main.swift */,
 			);
 			path = MyCreditManager;
@@ -74,6 +77,22 @@
 				A5B7BB8B29F8E67A00F50814 /* Enums.swift */,
 			);
 			path = Enums;
+			sourceTree = "<group>";
+		};
+		A5B7BB8E29F8EEFB00F50814 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A5B7BB8F29F8EF0900F50814 /* Data.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A5B7BB9329F8FFAC00F50814 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				A5B7BB8729F8D8E400F50814 /* Menu.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,6 +156,7 @@
 				A5B7BB8829F8D8E400F50814 /* Menu.swift in Sources */,
 				A5B7BB8C29F8E67A00F50814 /* Enums.swift in Sources */,
 				A5B7BB7F29F8CDE900F50814 /* main.swift in Sources */,
+				A5B7BB9029F8EF0900F50814 /* Data.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
