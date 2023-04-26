@@ -16,8 +16,27 @@ class Menu {
 
 extension Menu {
 
+    func showDataList() {
+
+        if dataList.isEmpty {
+            return
+        }
+
+        for data in dataList {
+
+            print("이름: \(data.name)")
+
+            for grade in data.grade {
+
+                print("===> 과목: \(grade.subject), 성적: \(grade.point)")
+            }
+        }
+    }
+
     /** 메뉴 보여주기 */
     func showMenuList() {
+
+        showDataList()
 
         // 안내문 출력
         print("""
@@ -58,12 +77,15 @@ extension Menu {
         case .remove_grade:
 
             print("성적삭제")
+            removeGrade()
         case .average:
 
             print("평점보기")
+            average()
         case .quit:
 
             print("종료")
+            return
         case .none:
 
             print("입력오류")
@@ -132,6 +154,7 @@ extension Menu {
         }
     }
 
+    /** 성적추가(변경) */
     func addGrade() {
 
         // 안내문 출력
@@ -165,6 +188,8 @@ extension Menu {
                         let gradeInfo = Grade()
                         gradeInfo.subject = input[1]
                         gradeInfo.point = input[2]
+
+                        dataList[index].grade.append(gradeInfo)
                     }
 
                     print("\(input[0]) 학생의 \(input[1]) 과목이 \(input[2])으로 추가(변경) 되었습니다.")
@@ -177,6 +202,108 @@ extension Menu {
             }
 
             showMenuList()
+        }
+    }
+
+    /** 성적삭제 */
+    func removeGrade() {
+
+        // 안내문 출력
+        print("""
+              성적을 삭제할 학생의 이름, 과목 이름을 띄어쓰기로 구분하여 차례로 작성해주세요.
+              입력 예) Mickey Swift
+              """)
+
+        // input 실행
+        if let input = readLine()?.split(separator: " ").map({ String($0) }) {
+
+            // 예외처리
+            if input.isEmpty || input.count != 2 {
+                print("입력이 잘못되었습니다. 다시 확인해주세요.")
+            }
+
+            else {
+
+                if let index = dataList.firstIndex(where: { $0.name == input[0] }) {
+
+                    var gardeList = dataList[index].grade
+
+                    if let gradeIndex = gardeList.firstIndex(where: { $0.subject == input[1] }) {
+
+                        gardeList.remove(at: gradeIndex)
+                        dataList[index].grade = gardeList
+
+                        print("\(input[0]) 학생의 \(input[1]) 과목의 성적이 삭제되었습니다.")
+                    }
+
+                    else {
+
+                        print("등록되지 않은 과목입니다. 다시 확인해주세요.")
+                    }
+
+                }
+
+                else {
+                    print("등록되지 않은 학생입니다. 다시 확인해주세요.")
+                }
+            }
+        }
+
+        showMenuList()
+    }
+
+    /** 평점 계산 */
+    func average() {
+
+        print("평점을 알고싶은 학생의 이름을 입력해주세요.")
+
+        if let name = readLine() {
+
+            if let index = dataList.firstIndex(where: { $0.name == name }) {
+
+                var sum: Float = 0.0
+                for grade in dataList[index].grade {
+
+                    print("\(grade.subject): \(grade.point)")
+
+                    switch gradeType(rawValue: grade.point) {
+
+                    case .Ap:
+
+                        sum += 4.5
+                    case .A:
+
+                        sum += 4.0
+                    case .Bp:
+
+                        sum += 3.5
+                    case .B:
+
+                        sum += 3.0
+                    case .Cp:
+
+                        sum += 2.5
+                    case .C:
+
+                        sum += 2.0
+                    case .Dp:
+
+                        sum += 1.5
+                    case .D:
+
+                        sum += 1.0
+                    case .F:
+
+                        sum += 0.0
+                    case .none:
+
+                        print("해당되는 점수 없음")
+                    }
+                }
+
+                let average = sum / Float(dataList[index].grade.count)
+                print("평점: \(average)")
+            }
         }
     }
 }

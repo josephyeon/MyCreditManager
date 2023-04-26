@@ -16,3 +16,23 @@ enum menuType: String {
     case average = "5" // 평점보기
     case quit = "X" // 종료
 }
+
+/*
+- A+ (4.5점) / A (4점)
+- B+ (3.5점) / B (3점)
+- C+ (2.5점) / C (2점)
+- D+ (1.5점) / D (1점)
+- F (0점)
+ */
+enum gradeType: String {
+
+    case Ap = "A+"
+    case A = "A"
+    case Bp = "B+"
+    case B = "B"
+    case Cp = "C+"
+    case C = "C"
+    case Dp = "D+"
+    case D = "D"
+    case F = "F"
+}
